@@ -1,3 +1,20 @@
 __pycache__/
 *.pyc
 .env
+.env.*
+*.key
+*.pem
+# never ship media/models
+*.mp4
+*.mov
+*.png
+*.jpg
+*.jpeg
+*.webp
+*.safetensors
+*.ckpt
+*.pt
+*.bin
+source-sets/
+product/
+tests/
