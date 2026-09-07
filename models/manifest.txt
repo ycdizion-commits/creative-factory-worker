@@ -1,0 +1,24 @@
+# url | path relative to <volume>/models | expected bytes (from HF API, 2026-09-07)
+# --- Wan 2.2 I2V A14B (fp8 scaled, Kijai layout for WanVideoWrapper) ---
+https://huggingface.co/Kijai/WanVideo_comfy_fp8_scaled/resolve/main/I2V/Wan2_2-I2V-A14B-HIGH_fp8_e4m3fn_scaled_KJ.safetensors | diffusion_models/Wan2_2-I2V-A14B-HIGH_fp8_e4m3fn_scaled_KJ.safetensors | 15000000000
+https://huggingface.co/Kijai/WanVideo_comfy_fp8_scaled/resolve/main/I2V/Wan2_2-I2V-A14B-LOW_fp8_e4m3fn_scaled_KJ.safetensors | diffusion_models/Wan2_2-I2V-A14B-LOW_fp8_e4m3fn_scaled_KJ.safetensors | 15000000000
+# --- Wan 2.1 T2V 14B + VACE module (VACE stack that fits an 80 GB volume) ---
+https://huggingface.co/Kijai/WanVideo_comfy_fp8_scaled/resolve/main/T2V/Wan2_1-T2V-14B_fp8_e4m3fn_scaled_KJ.safetensors | diffusion_models/Wan2_1-T2V-14B_fp8_e4m3fn_scaled_KJ.safetensors | 14500000000
+https://huggingface.co/Kijai/WanVideo_comfy_fp8_scaled/resolve/main/VACE/Wan2_1-VACE-module-14B_fp8_e4m3fn_scaled_KJ.safetensors | diffusion_models/Wan2_1-VACE-module-14B_fp8_e4m3fn_scaled_KJ.safetensors | 3050000000
+# --- shared encoders / VAE ---
+https://huggingface.co/Kijai/WanVideo_comfy/resolve/main/umt5-xxl-enc-fp8_e4m3fn.safetensors | text_encoders/umt5-xxl-enc-fp8_e4m3fn.safetensors | 6730000000
+https://huggingface.co/Kijai/WanVideo_comfy/resolve/main/Wan2_1_VAE_bf16.safetensors | vae/Wan2_1_VAE_bf16.safetensors | 260000000
+https://huggingface.co/Comfy-Org/Wan_2.1_ComfyUI_repackaged/resolve/main/split_files/clip_vision/clip_vision_h.safetensors | clip_vision/clip_vision_h.safetensors | 1270000000
+# --- 4-step distill LoRAs (cut sampling cost ~5x) ---
+https://huggingface.co/Kijai/WanVideo_comfy/resolve/main/LoRAs/Wan22_Lightx2v/Wan_2_2_I2V_A14B_HIGH_lightx2v_4step_lora_260412_rank_64_fp16.safetensors | loras/Wan_2_2_I2V_A14B_HIGH_lightx2v_4step_lora_260412_rank_64_fp16.safetensors | 640000000
+https://huggingface.co/Kijai/WanVideo_comfy/resolve/main/LoRAs/Wan22_Lightx2v/Wan_2_2_I2V_A14B_LOW_lightx2v_4step_lora_260412_rank_64_fp16.safetensors | loras/Wan_2_2_I2V_A14B_LOW_lightx2v_4step_lora_260412_rank_64_fp16.safetensors | 640000000
+https://huggingface.co/Kijai/WanVideo_comfy/resolve/main/Lightx2v/lightx2v_T2V_14B_cfg_step_distill_v2_lora_rank64_bf16.safetensors | loras/lightx2v_T2V_14B_cfg_step_distill_v2_lora_rank64_bf16.safetensors | 680000000
+# --- Z-Image Turbo (Apache-2.0) keyframe generator, native ComfyUI nodes ---
+https://huggingface.co/Comfy-Org/z_image_turbo/resolve/main/split_files/diffusion_models/z_image_turbo_bf16.safetensors | diffusion_models/z_image_turbo_bf16.safetensors | 12300000000
+https://huggingface.co/Comfy-Org/z_image_turbo/resolve/main/split_files/text_encoders/qwen_3_4b_fp8_mixed.safetensors | text_encoders/qwen_3_4b_fp8_mixed.safetensors | 5640000000
+https://huggingface.co/Comfy-Org/z_image_turbo/resolve/main/split_files/vae/ae.safetensors | vae/ae.safetensors | 335000000
+# --- OPTIONAL (needs ~100 GB volume): Wan 2.2 T2V A14B + Wan 2.2 Fun-VACE modules ---
+# https://huggingface.co/Kijai/WanVideo_comfy_fp8_scaled/resolve/main/T2V/Wan2_2-T2V-A14B_HIGH_fp8_e4m3fn_scaled_KJ.safetensors | diffusion_models/Wan2_2-T2V-A14B_HIGH_fp8_e4m3fn_scaled_KJ.safetensors | 15000000000
+# https://huggingface.co/Kijai/WanVideo_comfy_fp8_scaled/resolve/main/T2V/Wan2_2-T2V-A14B-LOW_fp8_e4m3fn_scaled_KJ.safetensors | diffusion_models/Wan2_2-T2V-A14B-LOW_fp8_e4m3fn_scaled_KJ.safetensors | 15000000000
+# https://huggingface.co/Kijai/WanVideo_comfy_fp8_scaled/resolve/main/VACE/Wan2_2_Fun_VACE_module_A14B_HIGH_fp8_e4m3fn_scaled_KJ.safetensors | diffusion_models/Wan2_2_Fun_VACE_module_A14B_HIGH_fp8_e4m3fn_scaled_KJ.safetensors | 3050000000
+# https://huggingface.co/Kijai/WanVideo_comfy_fp8_scaled/resolve/main/VACE/Wan2_2_Fun_VACE_module_A14B_LOW_fp8_e4m3fn_scaled_KJ.safetensors | diffusion_models/Wan2_2_Fun_VACE_module_A14B_LOW_fp8_e4m3fn_scaled_KJ.safetensors | 3050000000
